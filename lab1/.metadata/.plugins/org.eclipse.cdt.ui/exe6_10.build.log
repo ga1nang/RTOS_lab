@@ -1,0 +1,37 @@
+13:07:10 **** Incremental Build of configuration Debug for project exe6_10 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:125:4: warning: implicit declaration of function 'displayTime' [-Wimplicit-function-declaration]
+  125 |    displayTime(hour, minutes, seconds);
+      |    ^~~~~~~~~~~
+../Core/Src/main.c:101:7: warning: unused variable 'num' [-Wunused-variable]
+  101 |   int num = 0;
+      |       ^~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:297:6: warning: conflicting types for 'displayTime'
+  297 | void displayTime(int hour, int minutes, int seconds)
+      |      ^~~~~~~~~~~
+../Core/Src/main.c:125:4: note: previous implicit declaration of 'displayTime' was here
+  125 |    displayTime(hour, minutes, seconds);
+      |    ^~~~~~~~~~~
+arm-none-eabi-gcc -o "exe6_10.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\subject\RTOS\lab1\exe6_10\STM32F103C6UX_FLASH.ld" --specs=nosys.specs -Wl,-Map="exe6_10.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: exe6_10.elf
+ 
+arm-none-eabi-size   exe6_10.elf 
+arm-none-eabi-objdump -h -S  exe6_10.elf  > "exe6_10.list"
+arm-none-eabi-objcopy  -O ihex  exe6_10.elf  "exe6_10.hex"
+   text	   data	    bss	    dec	    hex	filename
+   5372	     20	   1572	   6964	   1b34	exe6_10.elf
+arm-none-eabi-objcopy  -O binary  exe6_10.elf  "exe6_10.bin"
+Finished building: default.size.stdout
+ 
+Finished building: exe6_10.hex
+Finished building: exe6_10.bin
+ 
+Finished building: exe6_10.list
+ 
+ 
+
+13:07:10 Build Finished. 0 errors, 3 warnings. (took 613ms)
+
