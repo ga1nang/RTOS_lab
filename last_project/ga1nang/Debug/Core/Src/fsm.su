@@ -1,0 +1,2 @@
+fsm.c:9:6:fsm_run	8	static
+fsm.c:68:6:execution_task	16	static
