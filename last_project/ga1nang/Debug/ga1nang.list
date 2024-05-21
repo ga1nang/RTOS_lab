@@ -106,8 +106,8 @@ void fsm_run(){
  8000180:	4b47      	ldr	r3, [pc, #284]	; (80002a0 <fsm_run+0x154>)
  8000182:	2202      	movs	r2, #2
  8000184:	601a      	str	r2, [r3, #0]
-		setTimer(0, 500);
- 8000186:	f44f 71fa 	mov.w	r1, #500	; 0x1f4
+		setTimer(0, 5000);
+ 8000186:	f241 3188 	movw	r1, #5000	; 0x1388
  800018a:	2000      	movs	r0, #0
  800018c:	f000 fb32 	bl	80007f4 <setTimer>
 		break;
@@ -129,8 +129,8 @@ void fsm_run(){
  80001a8:	4b3d      	ldr	r3, [pc, #244]	; (80002a0 <fsm_run+0x154>)
  80001aa:	2203      	movs	r2, #3
  80001ac:	601a      	str	r2, [r3, #0]
-			setTimer(0, 500);
- 80001ae:	f44f 71fa 	mov.w	r1, #500	; 0x1f4
+			setTimer(0, 5000);
+ 80001ae:	f241 3188 	movw	r1, #5000	; 0x1388
  80001b2:	2000      	movs	r0, #0
  80001b4:	f000 fb1e 	bl	80007f4 <setTimer>
 		}
@@ -153,8 +153,8 @@ void fsm_run(){
  80001d0:	4b33      	ldr	r3, [pc, #204]	; (80002a0 <fsm_run+0x154>)
  80001d2:	2204      	movs	r2, #4
  80001d4:	601a      	str	r2, [r3, #0]
-			setTimer(0, 500);
- 80001d6:	f44f 71fa 	mov.w	r1, #500	; 0x1f4
+			setTimer(0, 5000);
+ 80001d6:	f241 3188 	movw	r1, #5000	; 0x1388
  80001da:	2000      	movs	r0, #0
  80001dc:	f000 fb0a 	bl	80007f4 <setTimer>
 		}
@@ -177,8 +177,8 @@ void fsm_run(){
  80001f8:	4b29      	ldr	r3, [pc, #164]	; (80002a0 <fsm_run+0x154>)
  80001fa:	2205      	movs	r2, #5
  80001fc:	601a      	str	r2, [r3, #0]
-			setTimer(0, 1000);
- 80001fe:	f44f 717a 	mov.w	r1, #1000	; 0x3e8
+			setTimer(0, 10000);
+ 80001fe:	f242 7110 	movw	r1, #10000	; 0x2710
  8000202:	2000      	movs	r0, #0
  8000204:	f000 faf6 	bl	80007f4 <setTimer>
 		}
@@ -201,8 +201,8 @@ void fsm_run(){
  8000220:	4b1f      	ldr	r3, [pc, #124]	; (80002a0 <fsm_run+0x154>)
  8000222:	2206      	movs	r2, #6
  8000224:	601a      	str	r2, [r3, #0]
-			setTimer(0, 3000);
- 8000226:	f640 31b8 	movw	r1, #3000	; 0xbb8
+			setTimer(0, 30000);
+ 8000226:	f247 5130 	movw	r1, #30000	; 0x7530
  800022a:	2000      	movs	r0, #0
  800022c:	f000 fae2 	bl	80007f4 <setTimer>
 		}
@@ -225,8 +225,8 @@ void fsm_run(){
  8000248:	4b15      	ldr	r3, [pc, #84]	; (80002a0 <fsm_run+0x154>)
  800024a:	2207      	movs	r2, #7
  800024c:	601a      	str	r2, [r3, #0]
-			setTimer(0, 6000);
- 800024e:	f241 7170 	movw	r1, #6000	; 0x1770
+			setTimer(0, 60000);
+ 800024e:	f64e 2160 	movw	r1, #60000	; 0xea60
  8000252:	2000      	movs	r0, #0
  8000254:	f000 face 	bl	80007f4 <setTimer>
 		}

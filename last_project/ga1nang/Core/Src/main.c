@@ -97,7 +97,9 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  //add the timerRun to use the timer_counter and timer_flag.
   SCH_Add_Task(timerRun, 0, 10);
+  //execute the state machine.
   SCH_Add_Task(fsm_run, 0, 10);
   status = INIT;
   while (1)

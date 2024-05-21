@@ -9,11 +9,12 @@
 void fsm_run(){
 	switch(status){
 	case INIT:
+	//TODO for INIT state.
 		status = VALVE_1;
 		setTimer(0, 5000);
 		break;
 	case VALVE_1:
-		//TODO
+		//TODO for VALVE_1 state.
 		execution_task(status);
 		if (isTimerExpired(0) == 1) {
 			status = VALVE_2;
@@ -21,7 +22,7 @@ void fsm_run(){
 		}
 		break;
 	case VALVE_2:
-		//TODO
+		//TODO for VALVE_2 state.
 		execution_task(status);
 		if (isTimerExpired(0) == 1) {
 			status = VALVE_3;
@@ -29,7 +30,7 @@ void fsm_run(){
 		}
 		break;
 	case VALVE_3:
-		//TODO
+		//TODO for VALVE_3 state.
 		execution_task(status);
 		if (isTimerExpired(0) == 1) {
 			status = PUMP_1;
@@ -37,7 +38,7 @@ void fsm_run(){
 		}
 		break;
 	case PUMP_1:
-		//TODO
+		//TODO for PUMP_1 state.
 		execution_task(status);
 		if (isTimerExpired(0) == 1) {
 			status = PUMP_2;
@@ -45,7 +46,7 @@ void fsm_run(){
 		}
 		break;
 	case PUMP_2:
-		//TODO
+		//TODO for PUMP_2 state.
 		execution_task(status);
 		if (isTimerExpired(0) == 1) {
 			status = IDLE;
@@ -53,7 +54,7 @@ void fsm_run(){
 		}
 		break;
 	case IDLE:
-		//TODO
+		//TODO for IDLE state.
 		execution_task(status);
 		if (isTimerExpired(0) == 1) {
 			status = VALVE_1;
@@ -65,29 +66,37 @@ void fsm_run(){
 	}
 }
 
+//this function is used to execute the task of every state in the
+//state machine.
 void execution_task(int status){
 	switch(status){
 		case VALVE_1:
+			//turn on the pin PB0.
 			HAL_GPIO_WritePin(GPIOB, SEG1_Pin|SEG2_Pin|SEG3_Pin|SEG4_Pin|SEG5_Pin, GPIO_PIN_SET);
 			HAL_GPIO_WritePin(GPIOB, SEG0_Pin, GPIO_PIN_RESET);
 			break;
 		case VALVE_2:
+			//turn on the pin PB1.
 			HAL_GPIO_WritePin(GPIOB, SEG0_Pin|SEG2_Pin|SEG3_Pin|SEG4_Pin|SEG5_Pin, GPIO_PIN_SET);
 			HAL_GPIO_WritePin(GPIOB, SEG1_Pin, GPIO_PIN_RESET);
 			break;
 		case VALVE_3:
+			//turn on the pin PB2.
 			HAL_GPIO_WritePin(GPIOB, SEG0_Pin|SEG1_Pin|SEG3_Pin|SEG4_Pin|SEG5_Pin, GPIO_PIN_SET);
 			HAL_GPIO_WritePin(GPIOB, SEG2_Pin, GPIO_PIN_RESET);
 			break;
 		case PUMP_1:
+			//turn on the pin PB3.
 			HAL_GPIO_WritePin(GPIOB, SEG0_Pin|SEG1_Pin|SEG2_Pin|SEG4_Pin|SEG5_Pin, GPIO_PIN_SET);
 			HAL_GPIO_WritePin(GPIOB, SEG3_Pin, GPIO_PIN_RESET);
 			break;
 		case PUMP_2:
+			//turn on the pin PB4.
 			HAL_GPIO_WritePin(GPIOB, SEG0_Pin|SEG1_Pin|SEG2_Pin|SEG3_Pin|SEG5_Pin, GPIO_PIN_SET);
 			HAL_GPIO_WritePin(GPIOB, SEG4_Pin, GPIO_PIN_RESET);
 			break;
 		case IDLE:
+			//turn on the pin PB5.
 			HAL_GPIO_WritePin(GPIOB, SEG0_Pin|SEG1_Pin|SEG2_Pin|SEG3_Pin|SEG4_Pin, GPIO_PIN_SET);
 			HAL_GPIO_WritePin(GPIOB, SEG5_Pin, GPIO_PIN_RESET);
 			break;

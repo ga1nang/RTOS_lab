@@ -38,7 +38,6 @@ void timerRun()
 				timer_flag[i] = 1;
 			}
 		}
-
 	}
 }
 
