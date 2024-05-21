@@ -1,4 +1,5 @@
 ## This is the README.md for the last project (An agricultural irrigation system)
+### Use the folder last_project/ga1nang as a workspace in STM32CubeIDE to run our system.
 
 We added 8 files to our project:
 - 4 header files: `fsm.h`, `global.h`, `scheduler.h`, `software_timer.h`
