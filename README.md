@@ -16,3 +16,5 @@ We added 8 files to our project:
 - `global.c`: Definition of the status variable.
 - `scheduler.c`: Implementation of the cooperative scheduler with complexity O(1).
 - `software_timer.c`: Same as the file provided by the teacher.
+
+### Github link: https://github.com/ga1nang/RTOS_lab
